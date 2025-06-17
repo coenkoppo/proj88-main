@@ -54,7 +54,7 @@ export default function Login() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="input w-full"
-                  placeholder="admin@barkasball88.com"
+                  placeholder="admin@barkasbali88.com"
                   required
                 />
               </div>
@@ -110,9 +110,12 @@ export default function Login() {
             <div className="mt-6 p-4 bg-gray-50 rounded-lg">
               <h3 className="text-sm font-medium text-gray-700 mb-2">Demo Credentials:</h3>
               <div className="text-sm text-gray-600 space-y-1">
-                <p><strong>Admin:</strong> admin@barkasball88.com / admin123</p>
-                <p><strong>Manager:</strong> manager@barkasball88.com / manager123</p>
-                <p><strong>Employee:</strong> employee@barkasball88.com / employee123</p>
+                <p><strong>Admin:</strong> admin@barkasbali88.com / admin123</p>
+                <p><strong>Manager:</strong> manager@barkasbali88.com / manager123</p>
+                <p><strong>Employee:</strong> employee@barkasbali88.com / employee123</p>
+              </div>
+              <div className="mt-3 p-2 bg-yellow-50 border border-yellow-200 rounded text-xs text-yellow-800">
+                <strong>Note:</strong> You need to create these users in Supabase Auth first. The migration only creates the user profiles, not the authentication credentials.
               </div>
             </div>
           </div>
