@@ -79,7 +79,18 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         password,
       });
 
-      if (error) throw error;
+      if (error) {
+        // Provide more specific error messages
+        if (error.message.includes('Invalid login credentials')) {
+          throw new Error('Email atau password salah. Pastikan user sudah dibuat di Supabase Authentication.');
+        } else if (error.message.includes('Email not confirmed')) {
+          throw new Error('Email belum dikonfirmasi. Silakan cek email Anda.');
+        } else if (error.message.includes('Too many requests')) {
+          throw new Error('Terlalu banyak percobaan login. Silakan coba lagi nanti.');
+        }
+        throw error;
+      }
+      
       toast.success('Login berhasil!');
     } catch (error: any) {
       toast.error(error.message || 'Login gagal');
